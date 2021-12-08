@@ -97,6 +97,8 @@ select_cluster_template() {
             export CLUSTER_TEMPLATE="${CLUSTER_TEMPLATE/prow/prow-machine-pool}"
         elif [[ "${CLUSTER_TEMPLATE}" =~ "custom-builds" ]]; then
             export CLUSTER_TEMPLATE="${CLUSTER_TEMPLATE/custom-builds/custom-builds-machine-pool}"
+        elif [[ "${CLUSTER_TEMPLATE}" =~ "external-cloud-provider" ]]; then
+            export CLUSTER_TEMPLATE="test/ci/cluster-template-prow-external-cloud-provider-machine-pool.yaml"
         fi
     fi
 
